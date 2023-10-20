@@ -42,7 +42,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 
 	while (*(n1 + i) != '\0')
 		i++;
-	while (*(n2 + i) != '\0')
+	while (*(n2 + j) != '\0')
 		j++;
 	i--;
 	j--;
@@ -69,11 +69,10 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		digits++;
 		j--;
 		i--;
-
-		if (digits == size_r)
-                        return (0);
-		*(r + digits) = '\0';
-		rev_string(r);
-		return (r);
 	}
+	if (digits == size_r)
+		return (0);
+	*(r + digits) = '\0';
+	rev_string(r);
+	return (r);
 }
